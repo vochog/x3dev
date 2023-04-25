@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage('Deploy to Remote'){
             steps{
-                sh 'scp -r ${WORKSPACE}/* ad@${staging_server}:/var/www/html/realest/x3dev/'
+                sh 'scp -r -o StrictHostKeyChecking=no ${WORKSPACE}/* root@${staging_server}:/var/www/html/realest/x3dev/'
             }
         }
     }
